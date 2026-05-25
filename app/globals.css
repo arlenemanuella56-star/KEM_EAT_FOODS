@@ -272,7 +272,7 @@ body {
 
 .card img {
     width: 100px;
-    height: 100px;
+    height: 200px;
     object-fit: cover;
     border-radius: 10px;
     margin-top: 10px;
@@ -364,4 +364,8 @@ body {
     .two-cols {
         grid-template-columns: 1fr;
     }
+}
+.hero-content .btn-primary {
+    display: inline-block;
+    margin-top: 8px;
 }
