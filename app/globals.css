@@ -271,8 +271,8 @@ body {
 }
 
 .card img {
-    width: 100px;
-    height: 200px;
+    width: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
     margin-top: 10px;
@@ -298,8 +298,8 @@ body {
     border-radius: 10px;
 }
 #boissons img {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 180px;
     object-fit: cover;
     border-radius: 10px;
     margin-right: 10px;
