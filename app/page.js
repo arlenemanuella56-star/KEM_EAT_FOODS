@@ -43,6 +43,7 @@ export default function Home() {
           <a href="#specialites">Nos spécialités</a>
           <a href="#epicerie">Épicerie & épices</a>
           <a href="#boissons">Boissons</a>
+          <a href="/commande">Commander</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -64,6 +65,7 @@ export default function Home() {
           <h1>Voyage culinaire au cœur des Afrique</h1>
           <p>Plats à emporter, épicerie africaine, grillades, desserts et boissons traditionnelles.</p>
           <a href="#prestations" className="btn-primary">Découvrir nos prestations</a>
+        <a href="/commande" className="btn-primary" style={{ marginLeft: '12px' }}>🛒 Commander</a>
         </div>
       </section>
 
