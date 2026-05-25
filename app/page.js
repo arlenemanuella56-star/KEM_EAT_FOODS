@@ -64,8 +64,8 @@ export default function Home() {
         <div className="hero-content">
           <h1>Voyage culinaire au cœur des Afrique</h1>
           <p>Plats à emporter, épicerie africaine, grillades, desserts et boissons traditionnelles.</p>
-          <a href="#prestations" className="btn-primary">Découvrir nos prestations</a>
-        <a href="/commande" className="btn-primary" style={{ marginLeft: '12px' }}>🛒 Commander</a>
+        <div style={{display: "flex", gap: "12px" , flexWrap:"wrap", marginTop: '16px'}} > <a href="#prestations" className="btn-primary">Découvrir nos prestations</a>
+        <a href="/commande" className="btn-primary" style={{ marginLeft: '12px' }}>🛒 Commander</a></div>
         </div>
       </section>
 
