@@ -18,6 +18,18 @@ body {
     background: var(--bg-beige);
     color: var(--text-dark);
 }
+.site-title {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* espace entre le logo et le nom */
+}
+
+.site-title img {
+    width: 40px;   /* taille du logo */
+    height: 40px;  /* tu peux changer */
+    object-fit: cover;
+    border-radius: 5px; /* optionnel */
+}
 
 /* HEADER */
 .header {
