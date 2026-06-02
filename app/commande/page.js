@@ -71,7 +71,7 @@ export default function Commande() {
       </header>
 
       <div style={{ paddingTop: 90, maxWidth: 900, margin: '0 auto', padding: '90px 24px 40px' }}>
-        <h1 style={{ fontSize: 32, marginBottom: 8 }}>Passer une commande</h1>
+        <h1 style={{ fontSize: 32, marginBottom: 8 }}>Passez une commande</h1>
         <p style={{ color: '#666', marginBottom: 32 }}>Choisissez vos plats puis renseignez vos informations.</p>
 
         {etape === 1 && (
