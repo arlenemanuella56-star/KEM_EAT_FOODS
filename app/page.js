@@ -48,7 +48,6 @@ export default function Home() {
           <a href="#contact">Contacts</a>
         </nav>
       </header>
-
       <section id="accueil" className="hero">
         <div className="hero-slideshow">
           <img src="https://i.pinimg.com/736x/92/d2/3e/92d23e0dbcb48707480ade1cbbe7f24a.jpg" className="slide active" alt="slide1" />
