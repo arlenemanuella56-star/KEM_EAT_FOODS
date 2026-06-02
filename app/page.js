@@ -35,8 +35,10 @@ export default function Home() {
   return (
     <>
       <header className="header">
-        <img src="/Logo.png" alt="Logo du site"/> 
-        <div className="logo">KEM EAT FOODS</div>
+ <div className="site-title">
+     <img src="/Logo.png" alt="Logo du site" />
+     <div className="logo">KEM EAT FOODS</div>
+</div>
         <nav className="nav">
           <a href="#accueil">Accueil</a>
           <a href="#histoire">Notre histoire</a>
