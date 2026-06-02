@@ -291,6 +291,6 @@ export default function Home() {
       <footer className="footer">
         <p>© KEM EAT FOODS – Plats à emporter & Épicerie africaine</p>
       </footer>
-    </>
-  )
+</>
+ )
 }
