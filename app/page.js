@@ -35,6 +35,7 @@ export default function Home() {
   return (
     <>
       <header className="header">
+        <img src="images/logo.png" alt="Logo du site"> 
         <div className="logo">KEM EAT FOODS</div>
         <nav className="nav">
           <a href="#accueil">Accueil</a>
@@ -44,7 +45,7 @@ export default function Home() {
           <a href="#epicerie">Épicerie & épices</a>
           <a href="#boissons">Boissons</a>
           <a href="/commande">Commander</a>
-          <a href="#contact">Contact</a>
+          <a href="#contact">Contacts</a>
         </nav>
       </header>
 
@@ -130,7 +131,7 @@ export default function Home() {
             <div className="special-header"><h3>Côte d'Ivoire</h3></div>
             <div className="grid">
               {[
-                { name: "Kedjenou de poulet", desc: "Poulet mijoté à l'étouffée avec légumes, cuit dans une marmite fermée.", img: "https://i.pinimg.com/736x/56/7c/f9/567cf9675d6d442881e7a022c618f3d1.jpg" },
+                { name: "Kedjenou de poulet", desc: "Poulet mijoté à l'étouffée avec légumes, cuit dans une marmite fermée.", img: "https://i.pinimg.com/736x/f6/b4/7a/f6b47af63dc0ff9d2e0017edc04e2316.jpg" },
                 { name: "Garba", desc: "Attiéké servi avec thon frit, oignons et piment frais.", img: "https://i.pinimg.com/736x/87/46/9e/87469e299c09df8c7112cdbcfcfc7e44.jpg" },
                 { name: "Sauce graine", desc: "Ragoût épais préparé avec la pulpe de noix de palme, servi avec riz ou foutou.", img: "https://i.pinimg.com/736x/63/e2/6c/63e26c664651936add9da3eefbaf740a.jpg" },
               ].map((item) => (
@@ -147,8 +148,8 @@ export default function Home() {
             <div className="special-header"><h3>Sénégal</h3></div>
             <div className="grid">
               {[
-                { name: "Thiep poulet", desc: "Riz sénégalais parfumé, cuit avec poulet, légumes et épices locales.", img: "https://i.pinimg.com/736x/fc/22/38/fc223831e6c221d91e319619730e5e6d.jpg" },
-                { name: "Thiep poisson", desc: "Riz cuit dans une sauce tomate épicée avec poisson et légumes.", img: "https://i.pinimg.com/1200x/d0/de/c6/d0dec6eb1737b5973cdcffeeebe20d9d.jpg" },
+                { name: "Tchep poulet", desc: "Riz sénégalais parfumé, cuit avec poulet, légumes et épices locales.", img: "https://i.pinimg.com/736x/fc/22/38/fc223831e6c221d91e319619730e5e6d.jpg" },
+                { name: "Tchep poisson", desc: "Riz cuit dans une sauce tomate épicée avec poisson et légumes.", img: "https://i.pinimg.com/1200x/d0/de/c6/d0dec6eb1737b5973cdcffeeebe20d9d.jpg" },
                 { name: "Mafé", desc: "Ragoût de viande mijoté dans une sauce d'arachide onctueuse.", img: "https://i.pinimg.com/1200x/96/8e/da/968eda51a53f74fc43922037dde7d9ac.jpg" },
                 { name: "Yassa", desc: "Plat à base d'oignons caramélisés, citron, moutarde et poulet ou poisson.", img: "https://i.pinimg.com/736x/64/2b/e9/642be9ae6285da6ac0fbc62e574316d8.jpg" },
               ].map((item) => (
@@ -224,7 +225,7 @@ export default function Home() {
           <p className="section-intro">Une sélection d'épices africaines pour sublimer vos plats : épaississants, exhausteurs de goût, herbes aromatiques et mélanges piquants.</p>
           <div className="grid">
             {[
-              { name: "Djanssang", desc: "Graines oléagineuses utilisées comme épaississant et exhausteur de goût dans les sauces.", img: "https://i.pinimg.com/1200x/ba/bf/3d/babf3d52fc1f00bb55c30822dba759e2.jpg" },
+              { name: "Djanssang", desc: "Graines oléagineuses utilisées comme épaississant et exhausteur de goût dans les sauces.", img: "https://i.pinimg.com/1200x/be/30/6f/be306f652906cbd01f5a9bd78873b37a.jpg" },
               { name: "Massep", desc: "Basilic tropical très présent dans la cuisine africaine, aux nombreuses vertus.", img: "https://i.pinimg.com/736x/b4/2a/53/b42a53a475788a40ca4cef16f1bbd18a.jpg" },
               { name: "Laurier / Paprika", desc: "Pour parfumer bouillons, marinades, viandes blanches, poissons et légumes.", img: "https://i.pinimg.com/1200x/d7/54/8f/d7548f0cba84b966c6a3bf1b7e92f239.jpg" },
               { name: "Clou de girofle / Thym", desc: "Épices et herbes pour sauces, marinades et plats mijotés.", img: "https://i.pinimg.com/1200x/26/be/4e/26be4eead802bf267b9e82714e297bb0.jpg" },
@@ -265,7 +266,7 @@ export default function Home() {
 
       <section id="contact" className="section section-contact">
         <div className="section-inner">
-          <h2>Contact & commandes</h2>
+          <h2>Contacts & commandes</h2>
           <p>Pour une commande, un devis ou une collaboration, laissez-nous un message :</p>
           <form className="contact-form" onSubmit={(e) => { e.preventDefault(); alert("Merci pour votre message !") }}>
             <div className="form-row">
