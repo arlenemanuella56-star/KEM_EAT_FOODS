@@ -132,7 +132,7 @@ export default function Home() {
             <div className="grid">
               {[
                 { name: "Kedjenou de poulet", desc: "Poulet mijoté à l'étouffée avec légumes, cuit dans une marmite fermée.", img: "https://i.pinimg.com/736x/f6/b4/7a/f6b47af63dc0ff9d2e0017edc04e2316.jpg" },
-                { name: "Garba", desc: "Attiéké servi avec thon frit, oignons et piment frais.", img:"https://pin.it/5ZOPL6Eb8"},
+                { name: "Garba", desc: "Attiéké servi avec thon frit, oignons et piment frais.", img:"/Garba.jpg"},
                 { name: "Sauce graine", desc: "Ragoût épais préparé avec la pulpe de noix de palme, servi avec riz ou foutou.", img: "https://i.pinimg.com/736x/63/e2/6c/63e26c664651936add9da3eefbaf740a.jpg" },
               ].map((item) => (
                 <div className="card" key={item.name}>
