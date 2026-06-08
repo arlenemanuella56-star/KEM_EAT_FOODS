@@ -35,9 +35,9 @@ export default function Home() {
   return (
     <>
       <header className="header">
- <div className="site-title">
-     <div className="logo">KEM EAT FOODS</div>
-</div>
+        <div className="site-title">
+          <div className="logo">KEM EAT FOODS</div>
+        </div>
         <nav className="nav">
           <a href="#accueil">Accueil</a>
           <a href="#histoire">Notre histoire</a>
@@ -49,6 +49,7 @@ export default function Home() {
           <a href="#contact">Contacts</a>
         </nav>
       </header>
+
       <section id="accueil" className="hero">
         <div className="hero-slideshow">
           <img src="https://i.pinimg.com/736x/92/d2/3e/92d23e0dbcb48707480ade1cbbe7f24a.jpg" className="slide active" alt="slide1" />
@@ -65,8 +66,10 @@ export default function Home() {
         <div className="hero-content">
           <h1>Voyage culinaire au cœur des Afriques</h1>
           <p>Plats à emporter, épices africaine, grillades, desserts et boissons traditionnelles.</p>
-        <div style={{display: "flex", gap: "12px" , flexWrap:"wrap", marginTop: '16px'}} > <a href="#prestations" className="btn-primary">Découvrir nos prestations</a>
-        <a href="/commande" className="btn-primary" style={{ marginLeft: '12px' }}>🛒 Commander</a></div>
+          <div style={{display: "flex", gap: "12px", flexWrap: "wrap", marginTop: '16px'}}>
+            <a href="#prestations" className="btn-primary">Découvrir nos prestations</a>
+            <a href="/commande" className="btn-primary" style={{ marginLeft: '12px' }}>🛒 Commander</a>
+          </div>
         </div>
       </section>
 
@@ -107,6 +110,7 @@ export default function Home() {
         <div className="section-inner">
           <h2>Nos spécialités</h2>
 
+          {/* CAMEROUN */}
           <div className="special-block">
             <div className="special-header"><h3>Cameroun</h3></div>
             <div className="grid">
@@ -127,6 +131,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* CÔTE D'IVOIRE */}
           <div className="special-block">
             <div className="special-header"><h3>Côte d'Ivoire</h3></div>
             <div className="grid">
@@ -144,6 +149,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* SÉNÉGAL */}
           <div className="special-block">
             <div className="special-header"><h3>Sénégal</h3></div>
             <div className="grid">
@@ -162,12 +168,15 @@ export default function Home() {
             </div>
           </div>
 
+          {/* NIGERIA */}
           <div className="special-block">
             <div className="special-header"><h3>Nigeria</h3></div>
             <div className="grid">
               {[
                 { name: "Egusi soup", desc: "Soupe épaisse préparée avec graines de melon moulues, légumes et viande.", img: "https://i.pinimg.com/736x/80/d7/2f/80d72f00f1a404c434b4ca0929d5bc5e.jpg" },
                 { name: "Jollof rice", desc: "Riz cuit dans une sauce tomate épicée, très populaire en Afrique de l'Ouest.", img: "https://i.pinimg.com/1200x/0c/16/c5/0c16c570b9b9a2ba27aa15886e45486a.jpg" },
+                { name: "Suya", desc: "Brochettes de viande épicée (souvent bœuf ou poulet) grillées au feu.", img: "https://i.pinimg.com/736x/55/39/30/553930667ae0469d00c1a881bf5c70b3.jpg" },
+                { name: "Pounded Yam and efo Riro", desc: "Igname pilée servie avec une sauce aux légumes et viande/poisson.", img: "https://i.pinimg.com/736x/b4/f1/bd/b4f1bd7bc9a1abb33ab84a63bdec483d.jpg" },
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
@@ -178,6 +187,115 @@ export default function Home() {
             </div>
           </div>
 
+          {/* BRÉSIL */}
+          <div className="special-block">
+            <div className="special-header"><h3>Brésil 🇧🇷</h3></div>
+            <div className="grid">
+              {[
+                { name: "Feijoada", desc: "Ragoût de haricots noirs avec viande, plat emblématique du Brésil.", img: "https://i.pinimg.com/736x/77/e9/40/77e9400dad11242fcc69994be9c2ebd5.jpg" },
+                { name: "Coxinha", desc: "Beignets brésiliens fourrés au poulet effiloché.", img: "https://i.pinimg.com/736x/33/81/f6/3381f6b021022c6f669bbf650c48a801.jpg" },
+                { name: "Pão de queijo", desc: "Petits pains au fromage, moelleux et populaires au Brésil.", img: "https://i.pinimg.com/1200x/55/63/bb/5563bbc9c3f2c9853a4eb039ce4f740b.jpg" },
+              ].map((item) => (
+                <div className="card" key={item.name}>
+                  <h4>{item.name}</h4>
+                  <p>{item.desc}</p>
+                  <img src={item.img} alt={item.name} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* MEXIQUE */}
+          <div className="special-block">
+            <div className="special-header"><h3>Mexique 🇲🇽</h3></div>
+            <div className="grid">
+              {[
+                { name: "Tacos", desc: "Tortillas garnies de viande, légumes et sauces mexicaines.", img: "https://i.pinimg.com/736x/3b/37/d3/3b37d3af2c4a550bd296ee34aa980771.jpg" },
+                { name: "Enchiladas", desc: "Tortillas roulées, garnies et nappées de sauce pimentée.", img: "https://i.pinimg.com/1200x/e7/ed/a2/e7eda2e8aeb4bd56995d1002aac19ba8.jpg" },
+                { name: "Guacamole", desc: "Purée d'avocat assaisonnée avec citron, oignon et coriandre.", img: "https://i.pinimg.com/1200x/ce/e9/e0/cee9e0cd60519ad0fc79f7ee36c671b2.jpg" },
+              ].map((item) => (
+                <div className="card" key={item.name}>
+                  <h4>{item.name}</h4>
+                  <p>{item.desc}</p>
+                  <img src={item.img} alt={item.name} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* PÉROU */}
+          <div className="special-block">
+            <div className="special-header"><h3>Pérou 🇵🇪</h3></div>
+            <div className="grid">
+              {[
+                { name: "Ceviche", desc: "Poisson cru mariné dans du citron vert, oignons et piment.", img: "https://i.pinimg.com/1200x/e9/9f/b7/e99fb7102604e2a17a6be5d061d37260.jpg" },
+                { name: "Lomo saltado", desc: "Sauté de bœuf avec oignons, tomates et frites, plat fusion péruvien.", img: "https://i.pinimg.com/1200x/02/7c/d6/027cd6fd2e5e47cb9965436373432d7e.jpg" },
+                { name: "Aji de gallina", desc: "Poulet effiloché dans une sauce crémeuse au piment jaune.", img: "https://i.pinimg.com/736x/f0/d4/59/f0d45904f9b3f044d2521b9d2f2113ce.jpg" },
+              ].map((item) => (
+                <div className="card" key={item.name}>
+                  <h4>{item.name}</h4>
+                  <p>{item.desc}</p>
+                  <img src={item.img} alt={item.name} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* JAMAÏQUE */}
+          <div className="special-block">
+            <div className="special-header"><h3>Jamaïque 🇯🇲</h3></div>
+            <div className="grid">
+              {[
+                { name: "Jerk chicken", desc: "Poulet mariné et grillé avec un mélange d'épices jamaïcaines.", img: "https://i.pinimg.com/736x/8c/3d/cd/8c3dcd5017c2393929ab5a301650c431.jpg" },
+                { name: "Rice and peas", desc: "Riz cuit avec lait de coco et haricots rouges, parfumé au thym.", img: "https://i.pinimg.com/1200x/4e/31/69/4e3169c2874698b6d41d7f6f46f6e556.jpg" },
+                { name: "Ackee and saltfish", desc: "Plat national jamaïcain à base d'ackee et de morue salée.", img: "https://i.pinimg.com/1200x/b9/c7/b4/b9c7b4f71125b3b0f1788121dc4cd503.jpg" },
+              ].map((item) => (
+                <div className="card" key={item.name}>
+                  <h4>{item.name}</h4>
+                  <p>{item.desc}</p>
+                  <img src={item.img} alt={item.name} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* CUBA */}
+          <div className="special-block">
+            <div className="special-header"><h3>Cuba 🇨🇺</h3></div>
+            <div className="grid">
+              {[
+                { name: "Ropa vieja", desc: "Bœuf effiloché mijoté dans une sauce tomate aux poivrons.", img: "https://i.pinimg.com/1200x/87/42/b5/8742b5249abc800060229a82e342e33a.jpg" },
+                { name: "Riz congrí", desc: "Mélange de riz et haricots noirs, assaisonné à la cubaine.", img: "https://i.pinimg.com/1200x/01/ef/98/01ef98536eca69a92513c9fb2f7d8dc8.jpg" },
+                { name: "Tostones", desc: "Bananes plantain frites deux fois, croustillantes et dorées.", img: "https://i.pinimg.com/1200x/6d/3e/e2/6d3ee2b3f62193e3273743f66fd75e69.jpg" },
+              ].map((item) => (
+                <div className="card" key={item.name}>
+                  <h4>{item.name}</h4>
+                  <p>{item.desc}</p>
+                  <img src={item.img} alt={item.name} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* HAÏTI */}
+          <div className="special-block">
+            <div className="special-header"><h3>Haïti 🇭🇹</h3></div>
+            <div className="grid">
+              {[
+                { name: "Griot", desc: "Morceaux de porc marinés, frits et servis croustillants.", img: "https://i.pinimg.com/1200x/72/1c/78/721c7834053a663dd6a497cfc9ed2055.jpg" },
+                { name: "Diri kole", desc: "Riz aux haricots rouges, assaisonné à la haïtienne.", img: "https://i.pinimg.com/1200x/16/83/4f/16834f929f5aca2a7c3240f2b7306b12.jpg" },
+                { name: "Soup joumou", desc: "Soupe traditionnelle à la courge, symbole de liberté en Haïti.", img: "https://i.pinimg.com/1200x/a1/e7/9d/a1e79d153f8c0ad18d675166d487b09d.jpg" },
+              ].map((item) => (
+                <div className="card" key={item.name}>
+                  <h4>{item.name}</h4>
+                  <p>{item.desc}</p>
+                  <img src={item.img} alt={item.name} />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* ACCOMPAGNEMENTS & GRILLADES */}
           <div className="special-block">
             <div className="special-header"><h3>Accompagnements & grillades</h3></div>
             <div className="grid">
@@ -199,6 +317,7 @@ export default function Home() {
             </div>
           </div>
 
+          {/* DESSERTS */}
           <div className="special-block">
             <div className="special-header"><h3>Desserts</h3></div>
             <div className="grid">
@@ -207,6 +326,11 @@ export default function Home() {
                 { name: "Caramel", img: "https://i.pinimg.com/736x/e6/e1/27/e6e1275a18689da554a7cccbb1a8b0d4.jpg" },
                 { name: "Caramel noix de coco", img: "https://i.pinimg.com/1200x/3a/fb/92/3afb9272e74024fdcca79812369a9a49.jpg" },
                 { name: "Beignet Koki", img: "https://i.pinimg.com/736x/6f/42/64/6f4264af51d7af8bc4af5ed4bfe1bccc.jpg" },
+                { name: "Rum cake", img: "https://i.pinimg.com/1200x/b8/e4/21/b8e421c5b746fa0ec470a2398891d06f.jpg" },
+                { name: "Flan cubano", img: "https://i.pinimg.com/1200x/00/f3/96/00f396fd481ecdeafc2a75269a937ea8.jpg" },
+                { name: "Churros", img: "https://i.pinimg.com/736x/a1/57/09/a15709c858f07753d10d34ad2d058d50.jpg" },
+                { name: "Brigadeiro", img: "https://i.pinimg.com/1200x/54/53/cb/5453cbd4075a7a2e35651070d4f91fc2.jpg" },
+                { name: "Arroz con leche", img: "https://i.pinimg.com/736x/68/5d/6b/685d6b94405191c19545e86eda303499.jpg" },
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
@@ -233,6 +357,20 @@ export default function Home() {
               { name: "Poivre blanc / noir", desc: "Pour un piquant maîtrisé et des arômes préservés jusqu'au service.", img: "https://i.pinimg.com/1200x/b9/2d/0c/b92d0cb4d420b1bdb669a3472b129ba0.jpg" },
               { name: "Rondelle / Cannelle", desc: "Graines et épices pour sauces riches et parfumées.", img: "https://i.pinimg.com/736x/ed/e4/3c/ede43c48bb9bb2cf36f30392f3668fbd.jpg" },
               { name: "Pébè / Mbongo", desc: "Épices incontournables des grillades et sauces noires camerounaises.", img: "https://i.pinimg.com/1200x/da/f6/a1/daf6a1dfd01ea58c1bbd531986cf1294.jpg" },
+              { name: "Piment Scotch Bonnet", desc: "Piment jamaïcain extrêmement fort, utilisé dans les marinades et grillades.", img: "https://i.pinimg.com/1200x/b2/18/2b/b2182bc68fa94fcdbd0b64b7e2e26932.jpg" },
+              { name: "Thym", desc: "Herbe aromatique essentielle dans les plats jamaïcains et caribéens.", img: "https://i.pinimg.com/736x/22/3e/1c/223e1c8fc46c131473d141b0485eb30e.jpg" },
+              { name: "Jerk seasoning", desc: "Mélange épicé : piment, ail, oignon, thym, muscade, cannelle, sucre brun.", img: "https://i.pinimg.com/1200x/fb/84/54/fb8454642b08686da8cada236757461b.jpg" },
+              { name: "Ail", desc: "Base aromatique incontournable dans la cuisine cubaine.", img: "https://i.pinimg.com/1200x/27/0d/4f/270d4f74ff32b4355cbcc67a58d22272.jpg" },
+              { name: "Cumin", desc: "Épice chaude utilisée dans les plats de viande et haricots.", img: "https://i.pinimg.com/1200x/26/23/f9/2623f98fe270a60a849765a4a191dcad.jpg" },
+              { name: "Sofrito", desc: "Mélange : ail, oignon, poivron, tomate, huile d'olive.", img: "https://i.pinimg.com/1200x/fc/e5/5e/fce55e38b7a65d6c2ec76dd680b4299b.jpg" },
+              { name: "Clou de girofle haïtien", desc: "Épice chaude utilisée dans les marinades et bouillons haïtiens.", img: "https://i.pinimg.com/736x/78/8d/76/788d76de6e610f5a76b77e2d43eaf39d.jpg" },
+              { name: "Chili en poudre", desc: "Mélange de piments séchés, base des plats mexicains.", img: "https://i.pinimg.com/736x/1d/84/64/1d84647ab5f31486554510d4d534ebfe.jpg" },
+              { name: "Origan", desc: "Herbe séchée très utilisée dans tacos, sauces et viandes.", img: "https://i.pinimg.com/1200x/93/3f/5c/933f5cf4d861c2c962621721d3b9d8d0.jpg" },
+              { name: "Adobo mexicain", desc: "Piments séchés, ail, vinaigre, origan, cumin.", img: "https://i.pinimg.com/736x/99/da/dc/99dadc27dcf12dd04ddabe0719674e4a.jpg" },
+              { name: "Coriandre", desc: "Herbe fraîche très utilisée dans les plats brésiliens.", img: "https://i.pinimg.com/1200x/80/2c/df/802cdf23d3b1c6e2d816fb64c1122ffe.jpg" },
+              { name: "Tempero", desc: "Mélange : ail + sel, oignon, coriandre, huile.", img: "https://i.pinimg.com/1200x/0b/64/92/0b6492206cd0ae5566b3014e7ff762e2.jpg" },
+              { name: "Aji amarillo", desc: "Piment jaune péruvien, parfumé et légèrement piquant.", img: "https://i.pinimg.com/736x/ce/3d/3c/ce3d3c7ec3d550bf6cf936c4470c3f5a.jpg" },
+              { name: "Sauce Aji Amarillo", desc: "Piment jaune, oignon, ail, citron, huile.", img: "https://i.pinimg.com/736x/3e/d0/d4/3ed0d440ae5d09fedce56d589dd9d8c1.jpg" },
             ].map((item) => (
               <div className="card" key={item.name}>
                 <h3>{item.name}</h3>
@@ -253,6 +391,20 @@ export default function Home() {
               { name: "Boisson au baobab", desc: "Poudre de baobab, eau, sucre, lait (optionnel).", img: "https://i.pinimg.com/236x/9d/ed/00/9ded00ff55c74c57d1c0e86d6d5160ee.jpg" },
               { name: "Gingembre", desc: "Gingembre frais, eau, jus de citron en option.", img: "https://i.pinimg.com/736x/19/30/d5/1930d534161cac21d6c468b3df488c78.jpg" },
               { name: "Tamarin", desc: "Tamarin, eau tiède, citron vert, sucre selon votre goût.", img: "https://i.pinimg.com/736x/7d/7c/11/7d7c115e3b781bf8fedde1e7c0117c9f.jpg" },
+              { name: "Jus de mangue", desc: "Boisson douce et fruitée à base de mangue fraîche.", img: "https://i.pinimg.com/736x/2d/2b/e5/2d2be5b4042ddea128e748a65bebf459.jpg" },
+              { name: "Eau de coco", desc: "Boisson hydratante et rafraîchissante, 100% naturelle.", img: "https://i.pinimg.com/736x/85/b1/eb/85b1eb27363cc5f2e0dd6cd854fbe4c5.jpg" },
+              { name: "Jus de goyave", desc: "Boisson tropicale douce et parfumée.", img: "https://i.pinimg.com/736x/bb/d8/46/bbd8466bf6e59601ff9c0a06906b9753.jpg" },
+              { name: "Limonade cubaine", desc: "Citron, sucre et eau glacée pour une boisson rafraîchissante.", img: "https://i.pinimg.com/736x/d1/0f/38/d10f381dfa16278b10aa4d83096a877a.jpg" },
+              { name: "Jus d'ananas", desc: "Jus tropical sucré et désaltérant.", img: "https://i.pinimg.com/736x/6e/9a/36/6e9a3659956f231eb458b368d82a2676.jpg" },
+              { name: "Jus de corossol", desc: "Boisson crémeuse et parfumée à base de soursop.", img: "https://i.pinimg.com/736x/e0/4b/1b/e04b1be7266c6bdc9f2890f4ec47f449.jpg" },
+              { name: "Jus de papaye", desc: "Jus doux, onctueux et riche en vitamines.", img: "https://i.pinimg.com/736x/4d/b6/30/4db630ec99d6ab3230cd3f1ef2ec50ef.jpg" },
+              { name: "Jus de citron vert", desc: "Citron vert sucré, boisson fraîche et acidulée.", img: "https://i.pinimg.com/736x/15/0a/5e/150a5e8beae0bdbc3a0e2d8c95c65a2b.jpg" },
+              { name: "Agua de sandía", desc: "Boisson à la pastèque mixée, très rafraîchissante.", img: "https://i.pinimg.com/736x/20/3d/03/203d03851eaaefba8c5ee17c90cde08f.jpg" },
+              { name: "Horchata", desc: "Boisson de riz parfumée à la cannelle et au sucre.", img: "https://i.pinimg.com/736x/00/da/13/00da130fe2fd41bb12d3f04380fde224.jpg" },
+              { name: "Jus de cajou", desc: "Boisson douce et fruitée à base de pomme de cajou.", img: "https://i.pinimg.com/736x/6a/03/39/6a03393d62911fdaf314f3e6dde3823f.jpg" },
+              { name: "Jus de maracujá", desc: "Jus de fruit de la passion, acidulé et parfumé.", img: "https://i.pinimg.com/736x/2e/10/50/2e1050aee6c3096743e57a0ff7e63890.jpg" },
+              { name: "Chicha morada", desc: "Boisson de maïs violet avec épices et citron.", img: "https://i.pinimg.com/736x/2e/10/50/2e1050aee6c3096743e57a0ff7e63890.jpg" },
+              { name: "Jus de lucuma", desc: "Boisson crémeuse à base du fruit lucuma.", img: "https://i.pinimg.com/736x/e8/8d/cd/e88dcd537cd04490adb8723b7a787e76.jpg" },
             ].map((item) => (
               <div className="card" key={item.name}>
                 <h3>{item.name}</h3>
@@ -291,6 +443,6 @@ export default function Home() {
       <footer className="footer">
         <p>© KEM EAT FOODS – Plats à emporter & Épices africaine</p>
       </footer>
-</>
- )
+    </>
+  )
 }
