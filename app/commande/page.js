@@ -2,24 +2,124 @@
 import { useState } from 'react'
 
 const WHATSAPP_NUMBER = 'TON_NUMERO_WHATSAPP' // ex: 33612345678 (sans le +)
-const EMAIL_CONTACT = 'TON_EMAIL@gmail.com'
 
 const menu = [
+  // CAMEROUN
   { id: 1, nom: "Ndolé", prix: 12, categorie: "Cameroun" },
   { id: 2, nom: "Eru", prix: 12, categorie: "Cameroun" },
   { id: 3, nom: "Poulet DG", prix: 14, categorie: "Cameroun" },
   { id: 4, nom: "Koki", prix: 8, categorie: "Cameroun" },
-  { id: 5, nom: "Kedjenou de poulet", prix: 13, categorie: "Côte d'Ivoire" },
-  { id: 6, nom: "Garba", prix: 10, categorie: "Côte d'Ivoire" },
-  { id: 7, nom: "Tchep poulet", prix: 13, categorie: "Sénégal" },
-  { id: 8, nom: "Tchep poisson", prix: 13, categorie: "Sénégal" },
-  { id: 9, nom: "Mafé", prix: 12, categorie: "Sénégal" },
-  { id: 10, nom: "Yassa", prix: 12, categorie: "Sénégal" },
-  { id: 11, nom: "Jollof rice", prix: 11, categorie: "Nigeria" },
-  { id: 12, nom: "Egusi soup", prix: 12, categorie: "Nigeria" },
-  { id: 13, nom: "Bissap", prix: 4, categorie: "Boissons" },
-  { id: 14, nom: "Gingembre", prix: 4, categorie: "Boissons" },
-  { id: 15, nom: "Tamarin", prix: 4, categorie: "Boissons" },
+  { id: 5, nom: "Sauce Jaune", prix: 11, categorie: "Cameroun" },
+  { id: 6, nom: "Mets de pistache", prix: 12, categorie: "Cameroun" },
+
+  // CÔTE D'IVOIRE
+  { id: 7, nom: "Kedjenou de poulet", prix: 13, categorie: "Côte d'Ivoire" },
+  { id: 8, nom: "Garba", prix: 10, categorie: "Côte d'Ivoire" },
+  { id: 9, nom: "Sauce graine", prix: 11, categorie: "Côte d'Ivoire" },
+
+  // SÉNÉGAL
+  { id: 10, nom: "Tchep poulet", prix: 13, categorie: "Sénégal" },
+  { id: 11, nom: "Tchep poisson", prix: 13, categorie: "Sénégal" },
+  { id: 12, nom: "Mafé", prix: 12, categorie: "Sénégal" },
+  { id: 13, nom: "Yassa", prix: 12, categorie: "Sénégal" },
+
+  // NIGERIA
+  { id: 14, nom: "Jollof rice", prix: 11, categorie: "Nigeria" },
+  { id: 15, nom: "Egusi soup", prix: 12, categorie: "Nigeria" },
+  { id: 16, nom: "Suya", prix: 10, categorie: "Nigeria" },
+  { id: 17, nom: "Pounded Yam and efo Riro", prix: 13, categorie: "Nigeria" },
+
+  // BRÉSIL
+  { id: 18, nom: "Feijoada", prix: 13, categorie: "Brésil" },
+  { id: 19, nom: "Coxinha", prix: 8, categorie: "Brésil" },
+  { id: 20, nom: "Pão de queijo", prix: 6, categorie: "Brésil" },
+
+  // MEXIQUE
+  { id: 21, nom: "Tacos", prix: 10, categorie: "Mexique" },
+  { id: 22, nom: "Enchiladas", prix: 11, categorie: "Mexique" },
+  { id: 23, nom: "Guacamole", prix: 6, categorie: "Mexique" },
+
+  // PÉROU
+  { id: 24, nom: "Ceviche", prix: 12, categorie: "Pérou" },
+  { id: 25, nom: "Lomo saltado", prix: 13, categorie: "Pérou" },
+  { id: 26, nom: "Aji de gallina", prix: 12, categorie: "Pérou" },
+
+  // JAMAÏQUE
+  { id: 27, nom: "Jerk chicken", prix: 13, categorie: "Jamaïque" },
+  { id: 28, nom: "Rice and peas", prix: 9, categorie: "Jamaïque" },
+  { id: 29, nom: "Ackee and saltfish", prix: 12, categorie: "Jamaïque" },
+
+  // CUBA
+  { id: 30, nom: "Ropa vieja", prix: 13, categorie: "Cuba" },
+  { id: 31, nom: "Riz congrí", prix: 9, categorie: "Cuba" },
+  { id: 32, nom: "Tostones", prix: 7, categorie: "Cuba" },
+
+  // HAÏTI
+  { id: 33, nom: "Griot", prix: 13, categorie: "Haïti" },
+  { id: 34, nom: "Diri kole", prix: 9, categorie: "Haïti" },
+  { id: 35, nom: "Soup joumou", prix: 10, categorie: "Haïti" },
+
+  // ACCOMPAGNEMENTS
+  { id: 36, nom: "Frites", prix: 4, categorie: "Accompagnements" },
+  { id: 37, nom: "Alloco", prix: 4, categorie: "Accompagnements" },
+  { id: 38, nom: "Taro", prix: 4, categorie: "Accompagnements" },
+  { id: 39, nom: "Attiéké", prix: 4, categorie: "Accompagnements" },
+  { id: 40, nom: "Riz", prix: 3, categorie: "Accompagnements" },
+  { id: 41, nom: "Chikwang", prix: 4, categorie: "Accompagnements" },
+  { id: 42, nom: "Bobolo", prix: 4, categorie: "Accompagnements" },
+  { id: 43, nom: "Grillades variées", prix: 10, categorie: "Accompagnements" },
+
+  // DESSERTS
+  { id: 44, nom: "Kossam / Croquettes", prix: 5, categorie: "Desserts" },
+  { id: 45, nom: "Caramel", prix: 4, categorie: "Desserts" },
+  { id: 46, nom: "Caramel noix de coco", prix: 5, categorie: "Desserts" },
+  { id: 47, nom: "Beignet Koki", prix: 5, categorie: "Desserts" },
+  { id: 48, nom: "Rum cake", prix: 6, categorie: "Desserts" },
+  { id: 49, nom: "Flan cubano", prix: 5, categorie: "Desserts" },
+  { id: 50, nom: "Churros", prix: 5, categorie: "Desserts" },
+  { id: 51, nom: "Brigadeiro", prix: 4, categorie: "Desserts" },
+  { id: 52, nom: "Arroz con leche", prix: 5, categorie: "Desserts" },
+
+  // ÉPICES
+  { id: 53, nom: "Djanssang", prix: 5, categorie: "Épices" },
+  { id: 54, nom: "Massep", prix: 4, categorie: "Épices" },
+  { id: 55, nom: "Laurier / Paprika", prix: 4, categorie: "Épices" },
+  { id: 56, nom: "Clou de girofle / Thym", prix: 4, categorie: "Épices" },
+  { id: 57, nom: "Herbes de Provence / Djindja", prix: 4, categorie: "Épices" },
+  { id: 58, nom: "Poivre blanc / noir", prix: 4, categorie: "Épices" },
+  { id: 59, nom: "Rondelle / Cannelle", prix: 4, categorie: "Épices" },
+  { id: 60, nom: "Pébè / Mbongo", prix: 5, categorie: "Épices" },
+  { id: 61, nom: "Piment Scotch Bonnet", prix: 4, categorie: "Épices" },
+  { id: 62, nom: "Jerk seasoning", prix: 5, categorie: "Épices" },
+  { id: 63, nom: "Ail", prix: 3, categorie: "Épices" },
+  { id: 64, nom: "Cumin", prix: 3, categorie: "Épices" },
+  { id: 65, nom: "Sofrito", prix: 5, categorie: "Épices" },
+  { id: 66, nom: "Chili en poudre", prix: 3, categorie: "Épices" },
+  { id: 67, nom: "Origan", prix: 3, categorie: "Épices" },
+  { id: 68, nom: "Adobo mexicain", prix: 5, categorie: "Épices" },
+  { id: 69, nom: "Coriandre", prix: 3, categorie: "Épices" },
+  { id: 70, nom: "Tempero", prix: 5, categorie: "Épices" },
+  { id: 71, nom: "Aji amarillo", prix: 5, categorie: "Épices" },
+
+  // BOISSONS
+  { id: 72, nom: "Bissap", prix: 4, categorie: "Boissons" },
+  { id: 73, nom: "Gingembre", prix: 4, categorie: "Boissons" },
+  { id: 74, nom: "Tamarin", prix: 4, categorie: "Boissons" },
+  { id: 75, nom: "Boisson au baobab", prix: 4, categorie: "Boissons" },
+  { id: 76, nom: "Jus de mangue", prix: 4, categorie: "Boissons" },
+  { id: 77, nom: "Eau de coco", prix: 4, categorie: "Boissons" },
+  { id: 78, nom: "Jus de goyave", prix: 4, categorie: "Boissons" },
+  { id: 79, nom: "Limonade cubaine", prix: 4, categorie: "Boissons" },
+  { id: 80, nom: "Jus d'ananas", prix: 4, categorie: "Boissons" },
+  { id: 81, nom: "Jus de corossol", prix: 4, categorie: "Boissons" },
+  { id: 82, nom: "Jus de papaye", prix: 4, categorie: "Boissons" },
+  { id: 83, nom: "Jus de citron vert", prix: 4, categorie: "Boissons" },
+  { id: 84, nom: "Agua de sandía", prix: 4, categorie: "Boissons" },
+  { id: 85, nom: "Horchata", prix: 4, categorie: "Boissons" },
+  { id: 86, nom: "Jus de cajou", prix: 4, categorie: "Boissons" },
+  { id: 87, nom: "Jus de maracujá", prix: 4, categorie: "Boissons" },
+  { id: 88, nom: "Chicha morada", prix: 4, categorie: "Boissons" },
+  { id: 89, nom: "Jus de lucuma", prix: 4, categorie: "Boissons" },
 ]
 
 const categories = [...new Set(menu.map(p => p.categorie))]
