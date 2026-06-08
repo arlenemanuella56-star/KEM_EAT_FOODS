@@ -189,7 +189,7 @@ export default function Home() {
 
           {/* BRÉSIL */}
           <div className="special-block">
-            <div className="special-header"><h3>Brésil 🇧🇷</h3></div>
+            <div className="special-header"><h3>Brésil</h3></div>
             <div className="grid">
               {[
                 { name: "Feijoada", desc: "Ragoût de haricots noirs avec viande, plat emblématique du Brésil.", img: "https://i.pinimg.com/736x/77/e9/40/77e9400dad11242fcc69994be9c2ebd5.jpg" },
@@ -207,7 +207,7 @@ export default function Home() {
 
           {/* MEXIQUE */}
           <div className="special-block">
-            <div className="special-header"><h3>Mexique 🇲🇽</h3></div>
+            <div className="special-header"><h3>Mexique</h3></div>
             <div className="grid">
               {[
                 { name: "Tacos", desc: "Tortillas garnies de viande, légumes et sauces mexicaines.", img: "https://i.pinimg.com/736x/3b/37/d3/3b37d3af2c4a550bd296ee34aa980771.jpg" },
@@ -225,7 +225,7 @@ export default function Home() {
 
           {/* PÉROU */}
           <div className="special-block">
-            <div className="special-header"><h3>Pérou 🇵🇪</h3></div>
+            <div className="special-header"><h3>Pérou</h3></div>
             <div className="grid">
               {[
                 { name: "Ceviche", desc: "Poisson cru mariné dans du citron vert, oignons et piment.", img: "https://i.pinimg.com/1200x/e9/9f/b7/e99fb7102604e2a17a6be5d061d37260.jpg" },
@@ -243,7 +243,7 @@ export default function Home() {
 
           {/* JAMAÏQUE */}
           <div className="special-block">
-            <div className="special-header"><h3>Jamaïque 🇯🇲</h3></div>
+            <div className="special-header"><h3>Jamaïque</h3></div>
             <div className="grid">
               {[
                 { name: "Jerk chicken", desc: "Poulet mariné et grillé avec un mélange d'épices jamaïcaines.", img: "https://i.pinimg.com/736x/8c/3d/cd/8c3dcd5017c2393929ab5a301650c431.jpg" },
@@ -261,7 +261,7 @@ export default function Home() {
 
           {/* CUBA */}
           <div className="special-block">
-            <div className="special-header"><h3>Cuba 🇨🇺</h3></div>
+            <div className="special-header"><h3>Cuba</h3></div>
             <div className="grid">
               {[
                 { name: "Ropa vieja", desc: "Bœuf effiloché mijoté dans une sauce tomate aux poivrons.", img: "https://i.pinimg.com/1200x/87/42/b5/8742b5249abc800060229a82e342e33a.jpg" },
@@ -279,7 +279,7 @@ export default function Home() {
 
           {/* HAÏTI */}
           <div className="special-block">
-            <div className="special-header"><h3>Haïti 🇭🇹</h3></div>
+            <div className="special-header"><h3>Haïti</h3></div>
             <div className="grid">
               {[
                 { name: "Griot", desc: "Morceaux de porc marinés, frits et servis croustillants.", img: "https://i.pinimg.com/1200x/72/1c/78/721c7834053a663dd6a497cfc9ed2055.jpg" },
