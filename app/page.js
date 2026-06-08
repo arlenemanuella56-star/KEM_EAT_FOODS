@@ -63,8 +63,8 @@ export default function Home() {
         </div>
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1>Voyage culinaire au cœur des Afrique</h1>
-          <p>Plats à emporter, épicerie africaine, grillades, desserts et boissons traditionnelles.</p>
+          <h1>Voyage culinaire au cœur des Afriques</h1>
+          <p>Plats à emporter, épices africaine, grillades, desserts et boissons traditionnelles.</p>
         <div style={{display: "flex", gap: "12px" , flexWrap:"wrap", marginTop: '16px'}} > <a href="#prestations" className="btn-primary">Découvrir nos prestations</a>
         <a href="/commande" className="btn-primary" style={{ marginLeft: '12px' }}>🛒 Commander</a></div>
         </div>
@@ -74,7 +74,7 @@ export default function Home() {
         <div className="section-inner two-cols">
           <div>
             <h2>Notre histoire</h2>
-            <p>KEM EAT FOODS est un projet dédié à la <strong>vente de plats à emporter</strong> et d'<strong>épicerie africaine</strong>. Inspiré des cuisines camerounaise, ivoirienne, sénégalaise et nigériane, notre objectif est de faire découvrir des saveurs authentiques, généreuses et conviviales.</p>
+            <p>KEM EAT FOODS est un projet dédié à la <strong>vente de plats à emporter</strong> et d'<strong>épices africaines</strong>. Inspiré des cuisines camerounaise, ivoirienne, sénégalaise et nigériane, notre objectif est de faire découvrir des saveurs authentiques, généreuses et conviviales.</p>
             <p>De la sauce Ndolé au Thiep, en passant par le Jollof rice, chaque plat est préparé avec des épices sélectionnées et un savoir-faire traditionnel.</p>
           </div>
           <div className="image-block">
@@ -289,7 +289,7 @@ export default function Home() {
       </section>
 
       <footer className="footer">
-        <p>© KEM EAT FOODS – Plats à emporter & Épicerie africaine</p>
+        <p>© KEM EAT FOODS – Plats à emporter & Épices africaine</p>
       </footer>
 </>
  )
