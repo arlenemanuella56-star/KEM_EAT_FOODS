@@ -403,7 +403,7 @@ export default function Home() {
               { name: "Horchata", desc: "Boisson de riz parfumée à la cannelle et au sucre.", img: "https://i.pinimg.com/736x/00/da/13/00da130fe2fd41bb12d3f04380fde224.jpg" },
               { name: "Jus de cajou", desc: "Boisson douce et fruitée à base de pomme de cajou.", img: "https://i.pinimg.com/736x/6a/03/39/6a03393d62911fdaf314f3e6dde3823f.jpg" },
               { name: "Jus de maracujá", desc: "Jus de fruit de la passion, acidulé et parfumé.", img: "https://i.pinimg.com/736x/2e/10/50/2e1050aee6c3096743e57a0ff7e63890.jpg" },
-              { name: "Chicha morada", desc: "Boisson de maïs violet avec épices et citron.", img: "https://i.pinimg.com/1200x/ef/8a/18/ef8a1882cc08680186a0ff274f3e8a01.jpg" },
+              { name: "Chicha morada", desc: "Boisson de maïs violet avec épices et citron.", img: "https://i.pinimg.com/1200x/00/19/9e/00199ee629c0aaf2da22eaa26f8a1acb.jpg" },
               { name: "Jus de lucuma", desc: "Boisson crémeuse à base du fruit lucuma.", img: "https://i.pinimg.com/736x/e8/8d/cd/e88dcd537cd04490adb8723b7a787e76.jpg" },
             ].map((item) => (
               <div className="card" key={item.name}>
