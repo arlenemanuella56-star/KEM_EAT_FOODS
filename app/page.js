@@ -371,9 +371,9 @@ export default function Home() {
               { name: "Tempero", desc: "Mélange : ail + sel, oignon, coriandre, huile.", img: "https://i.pinimg.com/1200x/0b/64/92/0b6492206cd0ae5566b3014e7ff762e2.jpg" },
               { name: "Aji amarillo", desc: "Piment jaune péruvien, parfumé et légèrement piquant.", img: "https://i.pinimg.com/736x/ce/3d/3c/ce3d3c7ec3d550bf6cf936c4470c3f5a.jpg" },
               { name: "Sauce Aji Amarillo", desc: "Piment jaune, oignon, ail, citron, huile.", img: "https://i.pinimg.com/736x/3e/d0/d4/3ed0d440ae5d09fedce56d589dd9d8c1.jpg" },
-              { name: "Poivre long", desc: "Le poivre long africain est une épice aux arômes intenses et raffinés, idéale pour sublimer viandes, poissons, sauces et plats mijotés.",img: "https://i.pinimg.com/1200x/6e/59/33/6e593369904bd5ce710d95789d2aef01.jpg"},
-              { name: "Gousses de caroubes/Quatre-côtés", desc: "Le quatre-côtés est une épice africaine aux arômes chauds et parfumés, appréciée pour relever les plats, les sauces et les infusions traditionnelles.", img:"https://i.pinimg.com/736x/82/25/d6/8225d6abcba577d316a886942b9f6f38.jpg"},
-              { name: "Potasse", desc: "La potasse est un ingrédient traditionnel utilisé en cuisine africaine pour attendrir les aliments, épaissir certaines sauces et faciliter la cuisson des légumes et légumineuses.", img: "/potasse.png" }
+              { name: "Poivre long", desc: "Épice aux arômes intenses et raffinés, idéale pour sublimer viandes, poissons, sauces et plats mijotés.",img: "https://i.pinimg.com/1200x/6e/59/33/6e593369904bd5ce710d95789d2aef01.jpg"},
+              { name: "Gousses de caroubes/Quatre-côtés", desc: "Épice africaine aux arômes chauds et parfumés, appréciée pour relever les plats, les sauces et les infusions traditionnelles.", img:"https://i.pinimg.com/736x/82/25/d6/8225d6abcba577d316a886942b9f6f38.jpg"},
+              { name: "Potasse", desc: "Ingrédient traditionnel utilisé en cuisine africaine pour attendrir les aliments, épaissir certaines sauces et faciliter la cuisson des légumes et légumineuses.", img: "/potasse.png" }
             ].map((item) => (
               <div className="card" key={item.name}>
                 <h3>{item.name}</h3>
