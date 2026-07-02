@@ -407,21 +407,39 @@ export default function Home() {
               { name: "Pébè / Mbongo", desc: "Épices incontournables des grillades et sauces noires camerounaises.", img: "https://i.pinimg.com/1200x/da/f6/a1/daf6a1dfd01ea58c1bbd531986cf1294.jpg" },
               { name: "Piment Scotch Bonnet", desc: "Piment jamaïcain extrêmement fort, utilisé dans les marinades et grillades.", img: "https://i.pinimg.com/1200x/b2/18/2b/b2182bc68fa94fcdbd0b64b7e2e26932.jpg" },
               { name: "Thym", desc: "Herbe aromatique essentielle dans les plats jamaïcains et caribéens.", img: "https://i.pinimg.com/736x/22/3e/1c/223e1c8fc46c131473d141b0485eb30e.jpg" },
-              { name: "Jerk seasoning", desc: "Mélange épicé : piment, ail, oignon, thym, muscade, cannelle, sucre brun.", img: "https://i.pinimg.com/1200x/fb/84/54/fb8454642b08686da8cada236757461b.jpg" },
               { name: "Ail", desc: "Base aromatique incontournable dans la cuisine cubaine.", img: "https://i.pinimg.com/1200x/27/0d/4f/270d4f74ff32b4355cbcc67a58d22272.jpg" },
               { name: "Cumin", desc: "Épice chaude utilisée dans les plats de viande et haricots.", img: "https://i.pinimg.com/1200x/26/23/f9/2623f98fe270a60a849765a4a191dcad.jpg" },
-              { name: "Sofrito", desc: "Mélange : ail, oignon, poivron, tomate, huile d'olive.", img: "https://i.pinimg.com/1200x/fc/e5/5e/fce55e38b7a65d6c2ec76dd680b4299b.jpg" },
               { name: "Clou de girofle haïtien", desc: "Épice chaude utilisée dans les marinades et bouillons haïtiens.", img: "https://i.pinimg.com/736x/78/8d/76/788d76de6e610f5a76b77e2d43eaf39d.jpg" },
               { name: "Chili en poudre", desc: "Mélange de piments séchés, base des plats mexicains.", img: "https://i.pinimg.com/736x/1d/84/64/1d84647ab5f31486554510d4d534ebfe.jpg" },
               { name: "Origan", desc: "Herbe séchée très utilisée dans tacos, sauces et viandes.", img: "https://i.pinimg.com/1200x/93/3f/5c/933f5cf4d861c2c962621721d3b9d8d0.jpg" },
-              { name: "Adobo mexicain", desc: "Piments séchés, ail, vinaigre, origan, cumin.", img: "https://i.pinimg.com/736x/99/da/dc/99dadc27dcf12dd04ddabe0719674e4a.jpg" },
               { name: "Coriandre", desc: "Herbe fraîche très utilisée dans les plats brésiliens.", img: "https://i.pinimg.com/1200x/80/2c/df/802cdf23d3b1c6e2d816fb64c1122ffe.jpg" },
-              { name: "Tempero", desc: "Mélange : ail + sel, oignon, coriandre, huile.", img: "https://i.pinimg.com/1200x/0b/64/92/0b6492206cd0ae5566b3014e7ff762e2.jpg" },
               { name: "Aji amarillo", desc: "Piment jaune péruvien, parfumé et légèrement piquant.", img: "https://i.pinimg.com/736x/ce/3d/3c/ce3d3c7ec3d550bf6cf936c4470c3f5a.jpg" },
-              { name: "Sauce Aji Amarillo", desc: "Piment jaune, oignon, ail, citron, huile.", img: "https://i.pinimg.com/736x/3e/d0/d4/3ed0d440ae5d09fedce56d589dd9d8c1.jpg" },
               { name: "Poivre long", desc: "Épice aux arômes intenses et raffinés, idéale pour sublimer viandes, poissons, sauces et plats mijotés.", img: "https://i.pinimg.com/1200x/6e/59/33/6e593369904bd5ce710d95789d2aef01.jpg" },
               { name: "Gousses de caroubes/Quatre-côtés", desc: "Épice africaine aux arômes chauds et parfumés, appréciée pour relever les plats, les sauces et les infusions traditionnelles.", img: "https://i.pinimg.com/736x/82/25/d6/8225d6abcba577d316a886942b9f6f38.jpg" },
               { name: "Potasse", desc: "Ingrédient utilisé en cuisine africaine pour attendrir les aliments, épaissir certaines sauces et faciliter la cuisson des légumes et légumineuses.", img: "/potasse.png" }
+            ].map((item) => (
+              <div className="card" key={item.name}>
+                <h3>{item.name}</h3>
+                <img src={item.img} alt={item.name} />
+                <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
+              </div>
+              
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      <section id="marinades" className="section section-light">
+        <div className="section-inner">
+          <h2>Marinades</h2>
+          <p className="section-intro">Des marinades traditionnelles pour parfumer viandes, poissons et légumes avant cuisson, inspirées des cuisines africaine, caribéenne et latino-américaine.</p>
+          <div className="grid">
+            {[
+              { name: "Adobo mexicain", desc: "Piments séchés, ail, vinaigre, origan, cumin.", img: "https://i.pinimg.com/1200x/0b/2d/7a/0b2d7aa9d2f79b3f7e3d8ea7e6d275d5.jpg" },
+              { name: "Tempero", desc: "Mélange : ail + sel, oignon, coriandre, huile.", img: "https://i.pinimg.com/736x/a0/e8/39/a0e839aa39b249f25c8ebf7bf4c88322.jpg" },
+              { name: "Sauce Aji Amarillo", desc: "Piment jaune, oignon, ail, citron, huile.", img: "https://i.pinimg.com/736x/3e/d0/d4/3ed0d440ae5d09fedce56d589dd9d8c1.jpg" },
+              { name: "Sofrito", desc: "Mélange : ail, oignon, poivron, tomate, huile d'olive.", img: "https://i.pinimg.com/1200x/fc/e5/5e/fce55e38b7a65d6c2ec76dd680b4299b.jpg" },
+              { name: "Jerk seasoning", desc: "Mélange épicé : piment, ail, oignon, thym, muscade, cannelle, sucre brun.", img: "https://i.pinimg.com/736x/31/cf/13/31cf13224a584d9a7d0530854829359c.jpg" }
             ].map((item) => (
               <div className="card" key={item.name}>
                 <h3>{item.name}</h3>

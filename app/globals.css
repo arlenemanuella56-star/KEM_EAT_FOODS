@@ -21,14 +21,14 @@ body {
 .site-title {
     display: flex;
     align-items: center;
-    gap: 10px; /* espace entre le logo et le nom */
+    gap: 10px;
 }
 
 .site-title img {
-    width: 40px;   /* taille du logo */
-    height: 40px;  /* tu peux changer */
+    width: 40px;
+    height: 40px;
     object-fit: cover;
-    border-radius: 5px; /* optionnel */
+    border-radius: 5px;
 }
 
 /* HEADER */
@@ -80,15 +80,17 @@ body {
 .nav a:hover::after {
     width: 100%;
 }
+
+/* HERO */
 .hero {
     position: relative;
     height: 90vh;
     overflow: hidden;
-    margin-top: 70px;
     display: flex;
     align-items: center;
-    padding-left: 60px;
-    color: white;
+    padding: 0 60px;
+    margin-top: 70px;
+    color: var(--white);
 }
 
 .hero-slideshow {
@@ -124,29 +126,6 @@ body {
     max-width: 520px;
 }
 
-
-/* HERO */
-.hero {
-    position: relative;
-    height: 90vh;
-    display: flex;
-    align-items: center;
-    padding: 0 60px;
-    margin-top: 70px;
-    color: var(--white);
-}
-
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, rgba(0,0,0,0.7), rgba(0,0,0,0.3));
-}
-
-.hero-content {
-    position: relative;
-    max-width: 520px;
-}
-
 .hero h1 {
     font-size: 44px;
     line-height: 1.1;
@@ -170,6 +149,54 @@ body {
     letter-spacing: 0.1em;
     border: none;
     cursor: pointer;
+}
+
+/* TRUST STRIP */
+.trust-strip {
+    background: var(--bg-dark);
+    padding: 28px 24px;
+}
+
+.trust-strip-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: var(--white);
+}
+
+.trust-item svg {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    color: var(--accent);
+}
+
+.trust-item strong {
+    display: block;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.trust-item span {
+    display: block;
+    font-size: 13px;
+    color: #cfc7ba;
+    margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+    .trust-strip-inner {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* SECTIONS */
@@ -237,6 +264,8 @@ body {
     border-radius: 14px;
     padding: 22px;
     border: 1px solid rgba(255,255,255,0.08);
+    opacity: 1;
+    transform: none;
 }
 
 /* SPECIALITES */
@@ -256,13 +285,6 @@ body {
     color: var(--accent);
 }
 
-.special-header img {
-    width: 130px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
@@ -270,15 +292,17 @@ body {
 }
 
 .card {
-    background: var(--white);        /* ← plus de fond blanc */
+    background: var(--white);
     border-radius: 12px;
     padding: 16px 18px;
     font-size: 15px;
-    box-shadow: none;               /* ← plus d'ombre sur la carte */
-    overflow: hidden;               /* ← empêche le débordement */
+    box-shadow: none;
+    overflow: hidden;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .section-dark .card {
@@ -288,33 +312,6 @@ body {
 }
 
 .card img {
-    width: 100%;                    /* ← prend toute la largeur de la carte */
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-top: 10px;
-    display: block;
-}
-
-/* BOISSONS */
-#boissons .card h3 {
-    margin-bottom: 6px;
-    font-size: 17px;
-}
-.special-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
-}
-
-.special-header img {
-    width: 150px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-#boissons img {
     width: 100%;
     height: 180px;
     object-fit: cover;
@@ -323,7 +320,94 @@ body {
     display: block;
 }
 
+.card h4,
+.card h3 {
+    font-size: 16px;
+}
 
+/* BOUTON EN SAVOIR PLUS */
+.btn-learn-more {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    border-radius: 999px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.btn-learn-more:hover {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.section-dark .btn-learn-more {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* MODALE DE DÉTAIL */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: 16px;
+    max-width: 480px;
+    width: 100%;
+    padding: 24px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.modal-content h3 {
+    color: var(--accent);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    line-height: 1.6;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--bg-dark);
+    color: var(--white);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+}
 
 /* CONTACT */
 .contact-form {
@@ -368,7 +452,7 @@ body {
     }
 
     .nav {
-        display: none; /* tu pourras ajouter un burger si tu veux */
+        display: none;
     }
 
     .hero {
@@ -383,6 +467,7 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
 .hero-content .btn-primary {
     display: inline-block;
     margin-top: 8px;

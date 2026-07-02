@@ -90,17 +90,19 @@ const menu = [
   { id: 59, nom: "Rondelle / Cannelle", prix: 4, categorie: "Épices" },
   { id: 60, nom: "Pébè / Mbongo", prix: 5, categorie: "Épices" },
   { id: 61, nom: "Piment Scotch Bonnet", prix: 4, categorie: "Épices" },
-  { id: 62, nom: "Jerk seasoning", prix: 5, categorie: "Épices" },
-  { id: 63, nom: "Ail", prix: 3, categorie: "Épices" },
-  { id: 64, nom: "Cumin", prix: 3, categorie: "Épices" },
-  { id: 65, nom: "Sofrito", prix: 5, categorie: "Épices" },
-  { id: 66, nom: "Chili en poudre", prix: 3, categorie: "Épices" },
-  { id: 67, nom: "Origan", prix: 3, categorie: "Épices" },
-  { id: 68, nom: "Adobo mexicain", prix: 5, categorie: "Épices" },
-  { id: 69, nom: "Coriandre", prix: 3, categorie: "Épices" },
-  { id: 70, nom: "Tempero", prix: 5, categorie: "Épices" },
-  { id: 71, nom: "Aji amarillo", prix: 5, categorie: "Épices" },
-
+  { id: 62, nom: "Ail", prix: 3, categorie: "Épices" },
+  { id: 63, nom: "Cumin", prix: 3, categorie: "Épices" },
+  { id: 64, nom: "Chili en poudre", prix: 3, categorie: "Épices" },
+  { id: 65, nom: "Origan", prix: 3, categorie: "Épices" },
+  { id: 66, nom: "Coriandre", prix: 3, categorie: "Épices" },
+  
+   // Marinades
+  { id: 67, nom: "Adobo mexicain", prix: 5, categorie: "Épices" },
+  { id: 68, nom: "Tempero", prix: 5, categorie: "Épices" },
+  { id: 69, nom: "Aji amarillo", prix: 5, categorie: "Épices" },
+  { id: 71, nom: "Jerk seasoning", prix: 5, categorie: "Épices" },
+  { id: 70, nom: "Sofrito", prix: 5, categorie: "Épices" },
+  
   // BOISSONS
   { id: 72, nom: "Bissap", prix: 4, categorie: "Boissons" },
   { id: 73, nom: "Gingembre", prix: 4, categorie: "Boissons" },
