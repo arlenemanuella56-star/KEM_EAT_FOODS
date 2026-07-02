@@ -14,23 +14,25 @@ export default function Home() {
     }
     const sliderInterval = setInterval(changeSlide, 4000)
 
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1
+            entry.target.style.transform = 'translateY(0)'
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+    )
+
     const animatedCards = document.querySelectorAll('.card')
-    const handleScroll = () => {
-      const trigger = window.innerHeight * 0.9
-      animatedCards.forEach(card => {
-        const rect = card.getBoundingClientRect()
-        if (rect.top < trigger) {
-          card.style.opacity = 1
-          card.style.transform = 'translateY(0)'
-        }
-      })
-    }
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
+    animatedCards.forEach((card) => observer.observe(card))
 
     return () => {
       clearInterval(sliderInterval)
-      window.removeEventListener('scroll', handleScroll)
+      observer.disconnect()
     }
   }, [])
 
