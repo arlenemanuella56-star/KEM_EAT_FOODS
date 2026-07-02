@@ -46,6 +46,7 @@ export default function Home() {
           <a href="#prestations">Nos prestations</a>
           <a href="#specialites">Nos spécialités</a>
           <a href="#epicerie">Épicerie & épices</a>
+          <a href="#marinades">Marinades</a>
           <a href="#boissons">Boissons</a>
           <a href="/commande">Commander</a>
           <a href="#contact">Contacts</a>
