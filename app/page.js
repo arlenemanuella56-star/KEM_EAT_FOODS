@@ -1,7 +1,9 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [selectedItem, setSelectedItem] = useState(null)
+
   useEffect(() => {
     let slides = document.querySelectorAll('.hero-slideshow .slide')
     let index = 0
@@ -73,6 +75,52 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="trust-strip">
+        <div className="trust-strip-inner">
+          <div className="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M3 7h11v9H3z" strokeLinejoin="round"/>
+              <path d="M14 10h4l3 3v3h-7z" strokeLinejoin="round"/>
+              <circle cx="7" cy="18" r="1.5"/>
+              <circle cx="17.5" cy="18" r="1.5"/>
+            </svg>
+            <div>
+              <strong>Livraison rapide</strong>
+              <span>Partout en France</span>
+            </div>
+          </div>
+          <div className="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <rect x="3" y="6" width="18" height="13" rx="2"/>
+              <path d="M3 10h18"/>
+              <path d="M7 15h4"/>
+            </svg>
+            <div>
+              <strong>Paiement sécurisé</strong>
+              <span>Transactions protégées</span>
+            </div>
+          </div>
+          <div className="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.6-4.8 2.6.9-5.4L4.2 7.7l5.4-.8z" strokeLinejoin="round"/>
+            </svg>
+            <div>
+              <strong>Épices 100% naturelles</strong>
+              <span>Sélection artisanale</span>
+            </div>
+          </div>
+          <div className="trust-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 21s-7-4.4-9.5-8.9C.7 8.4 2.4 5 5.8 5c1.9 0 3.3 1 4.2 2.4C11 6 12.4 5 14.2 5c3.4 0 5.1 3.4 3.3 7.1C15 16.6 12 21 12 21z" strokeLinejoin="round"/>
+            </svg>
+            <div>
+              <strong>Fait avec passion</strong>
+              <span>Recettes traditionnelles</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="histoire" className="section section-light">
         <div className="section-inner two-cols">
           <div>
@@ -124,8 +172,8 @@ export default function Home() {
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
-                  <p>{item.desc}</p>
                   <img src={item.img} alt={item.name} />
+                  <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
                 </div>
               ))}
             </div>
@@ -142,8 +190,8 @@ export default function Home() {
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
-                  <p>{item.desc}</p>
                   <img src={item.img} alt={item.name} />
+                  <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
                 </div>
               ))}
             </div>
@@ -161,8 +209,8 @@ export default function Home() {
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
-                  <p>{item.desc}</p>
                   <img src={item.img} alt={item.name} />
+                  <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
                 </div>
               ))}
             </div>
@@ -180,8 +228,8 @@ export default function Home() {
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
-                  <p>{item.desc}</p>
                   <img src={item.img} alt={item.name} />
+                  <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
                 </div>
               ))}
             </div>
@@ -198,8 +246,8 @@ export default function Home() {
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
-                  <p>{item.desc}</p>
                   <img src={item.img} alt={item.name} />
+                  <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
                 </div>
               ))}
             </div>
@@ -216,8 +264,8 @@ export default function Home() {
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
-                  <p>{item.desc}</p>
                   <img src={item.img} alt={item.name} />
+                  <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
                 </div>
               ))}
             </div>
@@ -234,8 +282,8 @@ export default function Home() {
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
-                  <p>{item.desc}</p>
                   <img src={item.img} alt={item.name} />
+                  <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
                 </div>
               ))}
             </div>
@@ -252,8 +300,8 @@ export default function Home() {
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
-                  <p>{item.desc}</p>
                   <img src={item.img} alt={item.name} />
+                  <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
                 </div>
               ))}
             </div>
@@ -270,8 +318,8 @@ export default function Home() {
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
-                  <p>{item.desc}</p>
                   <img src={item.img} alt={item.name} />
+                  <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
                 </div>
               ))}
             </div>
@@ -288,8 +336,8 @@ export default function Home() {
               ].map((item) => (
                 <div className="card" key={item.name}>
                   <h4>{item.name}</h4>
-                  <p>{item.desc}</p>
                   <img src={item.img} alt={item.name} />
+                  <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
                 </div>
               ))}
             </div>
@@ -371,14 +419,14 @@ export default function Home() {
               { name: "Tempero", desc: "Mélange : ail + sel, oignon, coriandre, huile.", img: "https://i.pinimg.com/1200x/0b/64/92/0b6492206cd0ae5566b3014e7ff762e2.jpg" },
               { name: "Aji amarillo", desc: "Piment jaune péruvien, parfumé et légèrement piquant.", img: "https://i.pinimg.com/736x/ce/3d/3c/ce3d3c7ec3d550bf6cf936c4470c3f5a.jpg" },
               { name: "Sauce Aji Amarillo", desc: "Piment jaune, oignon, ail, citron, huile.", img: "https://i.pinimg.com/736x/3e/d0/d4/3ed0d440ae5d09fedce56d589dd9d8c1.jpg" },
-              { name: "Poivre long", desc: "Épice aux arômes intenses et raffinés, idéale pour sublimer viandes, poissons, sauces et plats mijotés.",img: "https://i.pinimg.com/1200x/6e/59/33/6e593369904bd5ce710d95789d2aef01.jpg"},
-              { name: "Gousses de caroubes/Quatre-côtés", desc: "Épice africaine aux arômes chauds et parfumés, appréciée pour relever les plats, les sauces et les infusions traditionnelles.", img:"https://i.pinimg.com/736x/82/25/d6/8225d6abcba577d316a886942b9f6f38.jpg"},
+              { name: "Poivre long", desc: "Épice aux arômes intenses et raffinés, idéale pour sublimer viandes, poissons, sauces et plats mijotés.", img: "https://i.pinimg.com/1200x/6e/59/33/6e593369904bd5ce710d95789d2aef01.jpg" },
+              { name: "Gousses de caroubes/Quatre-côtés", desc: "Épice africaine aux arômes chauds et parfumés, appréciée pour relever les plats, les sauces et les infusions traditionnelles.", img: "https://i.pinimg.com/736x/82/25/d6/8225d6abcba577d316a886942b9f6f38.jpg" },
               { name: "Potasse", desc: "Ingrédient utilisé en cuisine africaine pour attendrir les aliments, épaissir certaines sauces et faciliter la cuisson des légumes et légumineuses.", img: "/potasse.png" }
             ].map((item) => (
               <div className="card" key={item.name}>
                 <h3>{item.name}</h3>
-                <p>{item.desc}</p>
                 <img src={item.img} alt={item.name} />
+                <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
               </div>
             ))}
           </div>
@@ -395,7 +443,7 @@ export default function Home() {
               { name: "Gingembre", desc: "Gingembre frais, eau, jus de citron en option.", img: "https://i.pinimg.com/736x/19/30/d5/1930d534161cac21d6c468b3df488c78.jpg" },
               { name: "Tamarin", desc: "Tamarin, eau tiède, citron vert, sucre selon votre goût.", img: "https://i.pinimg.com/736x/7d/7c/11/7d7c115e3b781bf8fedde1e7c0117c9f.jpg" },
               { name: "Jus de mangue", desc: "Boisson douce et fruitée à base de mangue fraîche.", img: "https://i.pinimg.com/736x/2d/2b/e5/2d2be5b4042ddea128e748a65bebf459.jpg" },
-              { name: "Eau de coco", desc: "Boisson hydratante et rafraîchissante, 100% naturelle.", img: "https://i.pinimg.com/736x/85/b1/eb/85b1eb27363cc5f2e0dd6cd854fbe4c5.jpg" },
+              { name: "Jus de coco", desc: "Boisson hydratante et rafraîchissante, 100% naturelle.", img: "https://i.pinimg.com/736x/85/b1/eb/85b1eb27363cc5f2e0dd6cd854fbe4c5.jpg" },
               { name: "Jus de goyave", desc: "Boisson tropicale douce et parfumée.", img: "https://i.pinimg.com/736x/bb/d8/46/bbd8466bf6e59601ff9c0a06906b9753.jpg" },
               { name: "Limonade cubaine", desc: "Citron, sucre et eau glacée pour une boisson rafraîchissante.", img: "https://i.pinimg.com/736x/d1/0f/38/d10f381dfa16278b10aa4d83096a877a.jpg" },
               { name: "Jus d'ananas", desc: "Jus tropical sucré et désaltérant.", img: "https://i.pinimg.com/736x/6e/9a/36/6e9a3659956f231eb458b368d82a2676.jpg" },
@@ -411,8 +459,8 @@ export default function Home() {
             ].map((item) => (
               <div className="card" key={item.name}>
                 <h3>{item.name}</h3>
-                <p>{item.desc}</p>
                 <img src={item.img} alt={item.name} />
+                <button className="btn-learn-more" onClick={() => setSelectedItem(item)}>En savoir plus</button>
               </div>
             ))}
           </div>
@@ -442,6 +490,17 @@ export default function Home() {
           </form>
         </div>
       </section>
+
+      {selectedItem && (
+        <div className="modal-overlay" onClick={() => setSelectedItem(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setSelectedItem(null)}>×</button>
+            <img src={selectedItem.img} alt={selectedItem.name} />
+            <h3>{selectedItem.name}</h3>
+            <p>{selectedItem.desc}</p>
+          </div>
+        </div>
+      )}
 
       <footer className="footer">
         <p>© KEM EAT FOODS – Plats à emporter & Épices africaine</p>
