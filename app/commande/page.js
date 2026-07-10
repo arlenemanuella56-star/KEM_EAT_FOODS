@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const WHATSAPP_NUMBER = 'TON_NUMERO_WHATSAPP' // ex: 33612345678 (sans le +)
 
@@ -83,26 +83,26 @@ const menu = [
   // ÉPICES
   { id: 53, nom: "Djanssang", prix: 5, categorie: "Épices" },
   { id: 54, nom: "Massep", prix: 4, categorie: "Épices" },
-  { id: 55, nom: "Laurier / Paprika", prix: 4, categorie: "Épices" },
-  { id: 56, nom: "Clou de girofle / Thym", prix: 4, categorie: "Épices" },
-  { id: 57, nom: "Herbes de Provence / Djindja", prix: 4, categorie: "Épices" },
+  { id: 55, nom: "Laurier", prix: 4, categorie: "Épices" },
+  { id: 56, nom: "Clou de girofle", prix: 4, categorie: "Épices" },
+  { id: 57, nom: "Herbes de Provence", prix: 4, categorie: "Épices" },
   { id: 58, nom: "Poivre blanc / noir", prix: 4, categorie: "Épices" },
-  { id: 59, nom: "Rondelle / Cannelle", prix: 4, categorie: "Épices" },
-  { id: 60, nom: "Pébè / Mbongo", prix: 5, categorie: "Épices" },
+  { id: 59, nom: "Cannelle", prix: 4, categorie: "Épices" },
+  { id: 60, nom: "Mbongo", prix: 5, categorie: "Épices" },
   { id: 61, nom: "Piment Scotch Bonnet", prix: 4, categorie: "Épices" },
   { id: 62, nom: "Ail", prix: 3, categorie: "Épices" },
   { id: 63, nom: "Cumin", prix: 3, categorie: "Épices" },
   { id: 64, nom: "Chili en poudre", prix: 3, categorie: "Épices" },
   { id: 65, nom: "Origan", prix: 3, categorie: "Épices" },
-  { id: 66, nom: "Coriandre", prix: 3, categorie: "Épices" },
-  
-   // Marinades
+  { id: 66, nom: "Rondelle/Pébé", prix: 3, categorie: "Épices" },
+
+  // MARINADES
   { id: 67, nom: "Adobo mexicain", prix: 5, categorie: "Épices" },
   { id: 68, nom: "Tempero", prix: 5, categorie: "Épices" },
   { id: 69, nom: "Aji amarillo", prix: 5, categorie: "Épices" },
   { id: 71, nom: "Jerk seasoning", prix: 5, categorie: "Épices" },
   { id: 70, nom: "Sofrito", prix: 5, categorie: "Épices" },
-  
+
   // BOISSONS
   { id: 72, nom: "Bissap", prix: 4, categorie: "Boissons" },
   { id: 73, nom: "Gingembre", prix: 4, categorie: "Boissons" },
@@ -127,33 +127,61 @@ const menu = [
 const categories = [...new Set(menu.map(p => p.categorie))]
 
 export default function Commande() {
-  const [panier, setPanier] = useState({})
+  // Panier partagé : tableau [{ name, img, prix, qty }] — même format que la page d'accueil
+  const [cart, setCart] = useState([])
   const [infos, setInfos] = useState({ nom: '', telephone: '', adresse: '', message: '' })
   const [etape, setEtape] = useState(1)
 
-  const ajouterAuPanier = (id) => {
-    setPanier(prev => ({ ...prev, [id]: (prev[id] || 0) + 1 }))
-  }
+  // Charge le panier partagé depuis localStorage au premier rendu côté client
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem('kem_cart')
+      if (stored) setCart(JSON.parse(stored))
+    } catch (e) {
+      console.error('Erreur de lecture du panier :', e)
+    }
+  }, [])
 
-  const retirerDuPanier = (id) => {
-    setPanier(prev => {
-      const nouveau = { ...prev }
-      if (nouveau[id] > 1) nouveau[id]--
-      else delete nouveau[id]
-      return nouveau
+  // Sauvegarde le panier partagé à chaque modification
+  useEffect(() => {
+    try {
+      localStorage.setItem('kem_cart', JSON.stringify(cart))
+    } catch (e) {
+      console.error('Erreur de sauvegarde du panier :', e)
+    }
+  }, [cart])
+
+  const ajouterAuPanier = (plat) => {
+    setCart((prev) => {
+      const existing = prev.find((i) => i.name === plat.nom)
+      if (existing) {
+        return prev.map((i) =>
+          i.name === plat.nom ? { ...i, qty: i.qty + 1 } : i
+        )
+      }
+      return [...prev, { name: plat.nom, img: null, prix: plat.prix, qty: 1 }]
     })
   }
 
-  const totalItems = Object.values(panier).reduce((a, b) => a + b, 0)
-  const totalPrix = Object.entries(panier).reduce((acc, [id, qty]) => {
-    const plat = menu.find(p => p.id === parseInt(id))
-    return acc + plat.prix * qty
-  }, 0)
+  const retirerDuPanier = (plat) => {
+    setCart((prev) => {
+      const existing = prev.find((i) => i.name === plat.nom)
+      if (!existing) return prev
+      if (existing.qty > 1) {
+        return prev.map((i) =>
+          i.name === plat.nom ? { ...i, qty: i.qty - 1 } : i
+        )
+      }
+      return prev.filter((i) => i.name !== plat.nom)
+    })
+  }
 
-  const panierDetails = Object.entries(panier).map(([id, qty]) => {
-    const plat = menu.find(p => p.id === parseInt(id))
-    return `${plat.nom} x${qty} = ${plat.prix * qty}€`
-  }).join('\n')
+  const getQty = (nom) => cart.find((i) => i.name === nom)?.qty || 0
+
+  const totalItems = cart.reduce((a, i) => a + i.qty, 0)
+  const totalPrix = cart.reduce((a, i) => a + i.prix * i.qty, 0)
+
+  const panierDetails = cart.map((i) => `${i.name} x${i.qty} = ${i.prix * i.qty}€`).join('\n')
 
   const envoyerWhatsApp = () => {
     const message = `🛒 NOUVELLE COMMANDE KEM EAT FOODS\n\n👤 ${infos.nom}\n📞 ${infos.telephone}\n📍 ${infos.adresse}\n\n${panierDetails}\n\n💰 TOTAL: ${totalPrix}€\n\n💬 ${infos.message}`
@@ -187,9 +215,9 @@ export default function Commande() {
                       <div style={{ fontWeight: 600, marginBottom: 4 }}>{plat.nom}</div>
                       <div style={{ color: '#C28A4B', fontWeight: 700, marginBottom: 12 }}>{plat.prix}€</div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                        <button onClick={() => retirerDuPanier(plat.id)} style={{ width: 30, height: 30, borderRadius: '50%', border: '1px solid #ccc', background: 'white', cursor: 'pointer', fontSize: 16 }}>−</button>
-                        <span style={{ fontWeight: 600 }}>{panier[plat.id] || 0}</span>
-                        <button onClick={() => ajouterAuPanier(plat.id)} style={{ width: 30, height: 30, borderRadius: '50%', border: 'none', background: '#C28A4B', color: 'white', cursor: 'pointer', fontSize: 16 }}>+</button>
+                        <button onClick={() => retirerDuPanier(plat)} style={{ width: 30, height: 30, borderRadius: '50%', border: '1px solid #ccc', background: 'white', cursor: 'pointer', fontSize: 16 }}>−</button>
+                        <span style={{ fontWeight: 600 }}>{getQty(plat.nom)}</span>
+                        <button onClick={() => ajouterAuPanier(plat)} style={{ width: 30, height: 30, borderRadius: '50%', border: 'none', background: '#C28A4B', color: 'white', cursor: 'pointer', fontSize: 16 }}>+</button>
                       </div>
                     </div>
                   ))}
@@ -237,13 +265,12 @@ export default function Commande() {
 
             <div style={{ background: '#F4EDE2', borderRadius: 12, padding: 16, marginBottom: 24 }}>
               <h3 style={{ marginBottom: 8 }}>Récapitulatif</h3>
-              {Object.entries(panier).map(([id, qty]) => {
-                const plat = menu.find(p => p.id === parseInt(id))
-                return <div key={id} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4, fontSize: 14 }}>
-                  <span>{plat.nom} x{qty}</span>
-                  <span>{plat.prix * qty}€</span>
+              {cart.map((item) => (
+                <div key={item.name} style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 4, fontSize: 14 }}>
+                  <span>{item.name} x{item.qty}</span>
+                  <span>{item.prix * item.qty}€</span>
                 </div>
-              })}
+              ))}
               <div style={{ borderTop: '1px solid #d2c6b5', marginTop: 8, paddingTop: 8, fontWeight: 700, display: 'flex', justifyContent: 'space-between' }}>
                 <span>Total</span><span>{totalPrix}€</span>
               </div>

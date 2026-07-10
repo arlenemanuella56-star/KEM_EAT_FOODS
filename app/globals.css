@@ -95,7 +95,7 @@ body {
 
 .hero-slideshow {
     position: absolute;
-    inset: 0;
+    inset: 3;
     width: 100%;
     height: 100%;
 }
@@ -237,6 +237,12 @@ body {
     margin-bottom: 30px;
 }
 
+.histoire-accroche {
+    font-size: 18px;
+    color: var(--accent);
+    margin-bottom: 16px;
+}
+
 /* LAYOUT */
 .two-cols {
     display: grid;
@@ -325,6 +331,63 @@ body {
     font-size: 16px;
 }
 
+/* OVERLAY AU SURVOL DE L'IMAGE : ACHETER + DÉTAILS */
+.product-image-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.product-image-wrap img {
+    margin-top: 0;
+}
+
+.hover-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.product-image-wrap:hover .hover-overlay {
+    opacity: 1;
+}
+
+.overlay-btn {
+    border: none;
+    padding: 10px 22px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-radius: 999px;
+    cursor: pointer;
+    width: 75%;
+    max-width: 180px;
+    transition: opacity 0.2s ease;
+}
+
+.overlay-btn:hover {
+    opacity: 0.85;
+}
+
+.overlay-buy {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.overlay-details {
+    background: var(--bg-dark);
+    color: var(--white);
+}
+
 /* BOUTON EN SAVOIR PLUS */
 .btn-learn-more {
     margin-top: 12px;
@@ -394,6 +457,20 @@ body {
     color: var(--text-dark);
 }
 
+.modal-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.cart-total {
+    margin-top: 16px;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: right;
+    color: var(--text-dark);
+}
+
 .modal-close {
     position: absolute;
     top: 12px;
@@ -407,6 +484,133 @@ body {
     font-size: 18px;
     cursor: pointer;
     line-height: 1;
+}
+
+/* ACTIONS DE CARTE */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+    align-items: flex-start;
+}
+
+.btn-add-cart {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background: var(--accent);
+    border: 1px solid var(--accent);
+    color: var(--white);
+    border-radius: 999px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.25s ease, opacity 0.25s ease;
+}
+
+.card-actions .btn-add-cart {
+    margin-top: 0;
+}
+
+.btn-add-cart:hover {
+    opacity: 0.85;
+}
+
+/* BOUTON PANIER FLOTTANT */
+.cart-float-button {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1500;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--bg-dark);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* PANNEAU PANIER */
+.cart-panel {
+    max-width: 420px;
+}
+
+.cart-items {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 16px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 12px;
+}
+
+.cart-item img {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.cart-item-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.cart-item-qty {
+    font-size: 13px;
+    color: #777;
+}
+
+.cart-remove {
+    background: none;
+    border: none;
+    color: #b33;
+    font-size: 12px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.cart-checkout {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
 }
 
 /* CONTACT */
